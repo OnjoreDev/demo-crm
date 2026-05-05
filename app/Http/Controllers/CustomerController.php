@@ -38,10 +38,10 @@ class CustomerController extends Controller
     public function store(StoreCustomerRequest $request)
     {
         //
-        Customer::create([
+        Customer::create(array_merge(
             $request->validated(),
-            'user_id'=>auth()->id()
-            ]);
+            ['user_id'=>auth()->id()])
+            );
 
         return redirect()->route('customers.index')->with('success','Customer created successfully.');    
     }

@@ -3,7 +3,7 @@
           <h2>Add Customer</h2>
      </x-slot>
      <div class="p-6 shadow">
-        <form method="POST" action="{{ route('customers.create') }}" class="space-y-4">
+        <form method="POST" action="{{ route('customers.store') }}" class="space-y-4">
              @csrf
             <input type="text" name="name" placeholder="Name" class="w-full border p-2">
 
